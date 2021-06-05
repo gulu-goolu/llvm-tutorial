@@ -3,5 +3,5 @@ version: '3.9'
 services:
   llvm:
     build:
-      context: ./docker
+      context: ./
     entrypoint: /usr/bin/tail -f /dev/null
