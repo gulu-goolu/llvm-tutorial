@@ -1,7 +1,11 @@
 ---
 version: '3.9'
 services:
-  llvm:
+  build:
     build:
       context: ./
+      dockerfile: dockerfiles/Dockerfile.devel
     entrypoint: /usr/bin/tail -f /dev/null
+    volumes:
+      - .:/llvm-tutorial
+    working_dir: /llvm-tutorial
