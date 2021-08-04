@@ -24,4 +24,9 @@ target_link_libraries (toy
     m
     z
 )
-target_compile_options (toy PRIVATE "-fno-exceptions" -fno-rtti )
+target_compile_options (toy PRIVATE "-fno-exceptions" -fno-rtti)
+target_link_options (toy PRIVATE
+    "-static-libstdc++"
+    "-static-libgcc"    
+)
+
