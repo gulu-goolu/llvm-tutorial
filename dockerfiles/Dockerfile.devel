@@ -3,4 +3,13 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND="noninteractive"
 
 RUN apt update &&\
-    apt install -y make gcc g++ cmake python3 zlib1g-dev git wget vim
+    apt install -y make gcc g++ cmake python3 zlib1g-dev git wget vim software-properties-common
+
+# clang-format
+# 用于格式化代码，具体的安装细节见 https://apt.llvm.org/
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - &&\
+    add-apt-repository "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-12 main" &&\
+    apt-get update &&\
+    apt-get install -y clang-format-12 &&\
+    update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-12 1
+
