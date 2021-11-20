@@ -1,0 +1,10 @@
+= llvm-tutorial
+
+llvm 教程链接：https://llvm.org/docs/GettingStartedTutorials.html
+
+[source, shell]
+----
+mkdir build && cd build
+cmake ..
+make -j32
+----

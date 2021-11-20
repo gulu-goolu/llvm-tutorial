@@ -29,4 +29,3 @@ target_link_options (toy PRIVATE
     "-static-libstdc++"
     "-static-libgcc"    
 )
-
